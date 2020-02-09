@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+
+    {{!-- <video autoplay muted loop id="myVideo" <source scr="https://media.giphy.com/media/xUPGcHNYJTSP4uCUpy/giphy.gif"
+    type="video/gif">
+
+    </video> --}}
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>Welcome To Burger Town</h1>
+            <p class="lead">Where you can create your own burger and chomp away!!!</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Create Your Own Burger</h2>
+                <form action="/burger/create" method="Post">
+                    <input type="text" class="form-control" name="burger_name" value="" id="enter_text">
+                    <button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container" id="createBurger">
+        <div class="row">
+            <div class="col-md-5">
+                <h1>Eat Me!</h1>
+                {{#each burger_data}}
+                {{#unless this.devoured}}
+
+                <div>
+                    <div id={{this.id}} class="burger1">
+                        <button type="submit" class="openBurger"> {{this.burger_name}}</button>
+                    </div>
+                </div>
+
+                {{/unless}}
+                {{/each}}
+            </div>
+            <div class="col-md-5">
+                <h1>Yumm Dat Was Good!</h1>
+
+                {{#each burger_data}}
+                {{#if this.devoured}}
+                <div class="eatMe">
+                    <li>
+                        {{this.burger_name}}
+                    </li>
+                </div>
+            </div>
+            {{/if}}
+            {{/each}}
+        </div>
+    </div>
+
+</body>
+
+</html>
