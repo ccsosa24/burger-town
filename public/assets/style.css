@@ -97,7 +97,7 @@ h2 {
       background-color: yellow;
       width: 400px;
       margin-right: 300px;
-      color:blue;
+      color:white;
       
       
   }
@@ -113,5 +113,10 @@ h2 {
     /* width: 300px; */
     margin-left: 130px;
     color: white;
+}
+
+.li{
+    color: whitesmoke;
+
 }
   
